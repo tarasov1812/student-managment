@@ -8,4 +8,6 @@ public interface StudentService {
     List<StudentDto> getAllStudent();
 
     void createStudent(StudentDto student);
+
+    StudentDto getStudentById(Long studentId);
 }
