@@ -20,7 +20,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" th:href="@{/students/new}">New Student <span class="sr-only">(current)</span></a>
+                <a class="nav-link" th:href="@{/students/new}">New Student</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{/students}">Students</a>
             </li>
         </ul>
     </div>
@@ -48,6 +51,8 @@
                             placeholder="Enter your First Name"
                             th:field="*{firstName}"
                     />
+                    <p th:if="${#fields.hasErrors('firstName')}" class="text-danger"
+                    th:errors="*{firstName}"></p>
                 </div>
                 <div class="from-group mb-3">
                     <label class="form-label">Student Last name</label>
@@ -59,6 +64,8 @@
                             placeholder="Enter your Last Name"
                             th:field="*{lastName}"
                     />
+                    <p th:if="${#fields.hasErrors('lastName')}" class="text-danger"
+                       th:errors="*{lastName}"></p>
                 </div>
                 <div class="from-group mb-3">
                     <label class="form-label">Student Email</label>
@@ -70,8 +77,10 @@
                             type="email"
                             th:field="*{email}"
                     />
+                    <p th:if="${#fields.hasErrors('email')}" class="text-danger"
+                       th:errors="*{email}"></p>
                 </div>
-                <button class="btn btn-primary" type="submin">Submit</button>
+                <button class="btn btn-primary" type="submit">Submit</button>
             </form>
         </div>
     </div>
