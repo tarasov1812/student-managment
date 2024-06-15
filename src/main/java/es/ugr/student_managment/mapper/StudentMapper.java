@@ -13,4 +13,14 @@ public class StudentMapper {
         );
         return studentDto;
     }
+
+    public static Student mapToStudent(StudentDto studentDto){
+        Student student = new Student(
+                studentDto.getId(),
+                studentDto.getFirstName(),
+                studentDto.getLastName(),
+                studentDto.getEmail()
+        );
+        return student;
+    }
 }
